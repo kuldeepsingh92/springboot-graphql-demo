@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /graphql-demo
+spring:
+  application:
+    name: graphql-demo
+  datasource:
+    url: "jdbc:mysql://localhost:3306/graphql_demo?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Calcutta"
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    properties:
+      hibernate:
+        '[format_sql]': true
+  graphql:
+    path: /graphql-demo/graphiql
+    endpoint: /graphql-demo/graphql
+    graphiql:
+      enabled: true
+    graphql:
